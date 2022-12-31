@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caluladora Finaciera</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+
+    <h1 class="titulo">CALCULADORA FINANCIERA ..<span>&#160</span>
+    </h1> 
+     
+    <div class="body-car">
+        <ul class="nav">
+            <li><label class="nav_label">Interes </label>
+            <li><button class="interes_simple">Interes Simple</button></li>
+            <li><button class="interes_compuesto">Interes Compuesto </button></li>
+            </li>
+            <li><label class="nav_label">Descuento</label>
+            <li><button class="descuento_simple">Descuento Simple</button></li>
+            </li>
+            <li><label class="nav_label">Analisis</label>
+            <li><button class="analisis_patrimonial">Analisis Patrimonial</button></li>
+            <li><button class="analisis_finaciero">Analisis Financiero</button></li>
+
+            </li>
+
+        </ul>
+
+        <div class="contenedor">
+            <div class="contenedores_auxiliares">
+
+                <div class="interesSimpleVista oculto">
+                    <h3>INTERES SIMPLE</h3>
+                    <p>El interés simple es la tasa aplicada sobre un capital origen que permanece constante en el
+                        tiempo y no se añade a periodos sucesivos.</p>
+
+                    <label for="capital">Capital Inicial <input type="number" name="capital" value="0" id="capital_is"
+                            min="0"> </label>
+                    <br>
+                    <label for="FechaInicio">Fecha Inicio <input type="date" name="Fechainicio" id="FechaInicio_is"
+                            min="0">
+                    </label><br>
+                    <label for="Fechafinal">Fecha Final <input type="date" name="Fechafinal" id="Fechafinal_is" min="0">
+                    </label>
+                    <br>
+                    <label for="TasaInteres">Tasa De Interes(Mensual) <input type="number" required name="TasaInteres"
+                            value="0" id="tasa_is" min="0" max="30"> </label>
+                    <br>
+
+                    <br> <button id="button_interes_simple">CALCULAR INTERES SIMPLE</button>
+                    <button type="reset" id="limpiar_interes_simple">LIMPIAR</button>
+
+                </div>
+
+
+                <div class="interesCompuestoVista oculto">
+                    <h3>INTERES COMPUESTO</h3>
+                    <p>El interés compuesto en contabilidad y finanzas, es el interés de un capital al que se van
+                        acumulando sus créditos o intereses para que produzcan otros. El interés compuesto permite la
+                        capitalización de intereses periódicamente -día a día, mes a mes, etc.-</p>
+                    <label for="capital">Capital Inicial <input type="number" name="capital" value="0" id="capital_co"
+                            min="0"> </label>
+                    <br>
+                    <label for="FechaInicio">Fecha Inicio <input type="date" name="Fechainicio" id="FechaInicio_co"
+                            min="0">
+                    </label><br>
+                    <label for="Fechafinal">Fecha Final <input type="date" name="Fechafinal" id="Fechafinal_co" min="0">
+                    </label>
+                    <br>
+                    <label for="TasaInteres">Tasa De Interes(Mensual) <input type="number" name="TasaInteres" value="0"
+                            id="tasa_co" min="0" max="30"> </label>
+                    <br>
+                    </label>
+
+                    <br> <button id="button_interes_compuesto">CALCULAR INTERES COMPUESTO</button>
+                    <button type="reset" id="limpiar_interes_compuesto">LIMPIAR</button>
+
+
+                </div>
+
+                <div class="descuentoVista oculto">
+                    <h3>DESCUENTO SIMPLE</h3>
+                    <p>Se denomina así a la operación financiera que tiene por objeto la sustitución de un capital
+                        futuro por otro equivalente con vencimiento presente, mediante la aplicación de la ley
+                        financiera de descuento simple. Es una operación inversa a la de capitalización</p>
+                    <label for="capital">Monto Esperado<input type="number" name="capital" id="capital_des" min="0">
+                    </label>
+                    <br>
+                    <label for="FechaInicio">Fecha Inicio <input type="date" name="Fechainicio" id="FechaInicio_des"
+                            min="0">
+                    </label><br>
+                    <label for="Fechafinal">Fecha Final <input type="date" name="Fechafinal" id="Fechafinal_des"
+                            min="0">
+                    </label>
+                    <br>
+                    <label for="TasaInteres">Tasa De Interes(Mensual) <input type="number" name="TasaInteres"
+                            id="tasa_des" min="0" max="30"> </label>
+                    <br>
+                    </label>
+
+                    <br> <button id="button_descuento_simple">CALCULAR DESCUENTO</button>
+                    <button type="reset" id="limpiar_descuento_simple">LIMPIAR</button>
+
+                </div>
+
+
+                <div class="analisisPatrimonialVista oculto">
+                    <!--   -----------------------------------------------  -->
+
+                    <!-- TABLA DE BALANCE DE NUMEROS MAYORES -->
+                    <Table class="tabla">
+                        <!-- TITULO -->
+
+                        <thead>
+                            <h3>TABLA DE BALANCE DE NUMEROS MAYORES </h3>
+                            <tr>
+                                <th>
+                                    <h4>ACTIVOS</h4>
+                                </th>
+                                <th>
+                                    <h4>MONTOS</h4>
+                                </th>
+
+                                <th>
+                                    <h4>PASIVO Y CAPITAL</h4>
+                                </th>
+                                <th>
+                                    <h4>MONTOS</h4>
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <!--   -----------------------------------------------  -->
+                        <!-- ENTRADA DE DATOS EN LA MATRIZ -->
+                        <tbody>
+                            <tr>
+                                <th>CAJA</th>
+                                <th><input id="Icaja" type="number" value="0" min="0"></th>
+                                <th>DEUDAS A CORTO PLAZO</th>
+                                <th><input id="Ideudas_corto_plazo" type="number" value="0" min="0"></th>
+                            </tr>
+                            <tr>
+                                <th>CLIENTES</th>
+                                <th><input id="Iclientes" type="number" value="0" min="0"></th>
+                                <th>DEUDAS A LARGO PLAZO</th>
+                                <th><input id="Ideudas_largo_plazo" type="number" value="0" min="0"></th>
+                            </tr>
+                            <tr>
+                                <th>STOCK</th>
+                                <th><input id="Istock" type="number" value="0" min="0"></th>
+                                <th>PATRIMONIO</th>
+                                <th><input id="Ipatrimonio" type="number" value="0" min="0"></th>
+                            </tr>
+                            <tr>
+                                <th>ACTIVO FIJO</th>
+                                <th><input id="Iactivo_fijo" type="number" value="0" min="0"></th>
+                            </tr>
+                            <th>TOTAL ACTIVOS</th>
+                            <th><input id="Itotal_activo" type="number"></th>
+                            <th>TOTAL PASIVO</th>
+                            <th><input id="Itotal_pasivo" type="number"></th>
+                        </tbody>
+
+                    </Table>
+                    <button id="button_calcular_totales">CALCULAR TOTALES</button>
+
+                    <button id="button_analisis_patrimonial">REALIZAR ANALISIS</button>
+                </div>
+
+                <div class="analisisFinancieroVista oculto">
+                    <h3>RATIOS FINANCIEROS</h3>
+                    <h4>¿Qué son los ratios financieros?</h4>
+                    <p>
+                        Los ratios financieros son los indicadores de la situación de la empresa. Establecen una
+                        relación entre unidades financieras, con la que es posible realizar un análisis pormenorizado de
+                        la situación o balance económico de la compañía.</p>
+                    <button id="button_analisis_financiero">REALIZAR ANALISIS</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="conceptos">
+
+
+        <h3>CALCULADORA FINANCIERA</h3>
+        <p>
+            Una herramienta bastante util para la toma de deciones tanto como pesonales o de alguna organización o
+            empresa. etc
+        </p>
+        <h3> EL VALOR DEL DINERO EN EL TIEMPO</h3>
+        <p>
+            El valor del dinero en el tiempo es una herramienta que permite descubrir cómo cambia el poder adquisitivo
+            del dinero y cuáles son los diferentes métodos que se utilizan para realizar ese cálculo. Ante las
+            diferentes situaciones cotidianas, conocer y aplicar el valor del dinero en el tiempo permite tomar mejores
+            decisiones relacionadas a las finanzas, para que el dinero se pueda emplear mejor y construir un futuro más
+            seguro, tranquilo y productivo. <a
+                href="https://www.lamjol.info/index.php/multiensayos/article/view/9285/10590#:~:text=%E2%80%9CLa%20expresi%C3%B3n%20Valor%20del%20dinero,recibir%C3%A1%20en%20una%20fecha%20futura.">más
+                inf.</a></p>
+        <h3>ANALISIS PATRIMONIAL</h3>
+        <P>
+            Se considera al patrimonio neto de una empresa como el valor de esa empresa. Cuando una empresa da
+            beneficios, ese dinero se incluye dentro del patrimonio de la empresa, por lo que la misión principal de los
+            directivos de una empresa es aumentar el patrimonio neto. Cuanto mayor sea el patrimonio neto, mayor es el
+            valor de la empresa. <a
+                href="https://economipedia.com/definiciones/patrimonio-neto.html">teoria
+                analisís patrimonial</a>
+        </P>
+        <h3>ANALISIS FINANCIERO</h3>
+        <P>
+            Antes de comentarlo, vamos a definir dos palabras. Por un lado la liquidez o capacidad para hacer frente a
+            las deudas a corto plazo y por otro la solvencia o capacidad para hacer frente a todas sus deudas. A la
+            liquidez se le suele llamar solvencia a corto plazo.
+            <a
+                href="https://apalancate.es/teoria/2/analisis-contable.html#:~:text=El%20an%C3%A1lisis%20patrimonial%20estudia%20la,gr%C3%A1fica%20o%20fondo%20de%20maniobra.">analisis financiero</a>
+        </P>
+
+    </div>
+
+
+    <script src="./src/codigo.js"></script>
+</body>
+<footer>
+    <h4>
+        Derechos reservados &#169 Tito Carlos Gutierrez
+
+    </h4>
+
+
+    <BR> UNIVERSIDAD AUTONOMA GABRIEL RENE MORENO
+
+</footer>
+
+</html>
